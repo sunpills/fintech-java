@@ -14,7 +14,7 @@
         <h1>DinDinGo</h1>
                 <h2>Seu guia de economia</h2>
                  <h3>Entre com seu login :)</h3>
-        <form action="/" method="POST" class='login-form'>
+        <form action="/dindingo/LoginServlet" method="POST" class='login-form'>
             <label>E-mail:</label>
             <input type="text" class="login-email">
             <label>Senha:</label>

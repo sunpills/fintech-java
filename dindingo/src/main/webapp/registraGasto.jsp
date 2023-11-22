@@ -12,7 +12,7 @@
 	<nav><%@ include file="nav.jsp" %></nav>
 	 <section class="container-login">
                 <h2>Adicionar <strong>gasto</strong></h2>
-        <form action="/" method="POST" class='expense-form'>
+        <form action="/dindingo/ExpenseServlet" method="POST" class='expense-form'>
             <label>Quantia:</label>
             <input type="text" name="expense_value" class="register-expense">
             <label>Categoria:</label>

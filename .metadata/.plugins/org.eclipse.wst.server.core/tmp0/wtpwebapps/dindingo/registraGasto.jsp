@@ -12,13 +12,13 @@
 	<nav><%@ include file="nav.jsp" %></nav>
 	 <section class="container-login">
                 <h2>Adicionar <strong>gasto</strong></h2>
-        <form action="/" method="POST" class='expense-form'>
+        <form action="/dindingo/ExpenseServlet" method="POST" class='expense-form'>
             <label>Quantia:</label>
-            <input type="text" class="register-expense">
+            <input type="text" name="expense_value" class="register-expense">
             <label>Categoria:</label>
-            <input type="text" class="register-expense-category">
+            <input type="text" name="expense_category" class="register-expense-category">
             <label>Data:</label>
-            <input type="text" class="register-expense-date">
+            <input type="text" name="expense_date" class="register-expense-date">
             <button id="btn-register" type="submit">Adicionar</button>
         </form>
     </section>
