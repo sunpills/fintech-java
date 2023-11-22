@@ -1,0 +1,45 @@
+package com.fiap.dindingo.model;
+
+import java.time.LocalDate;
+
+public class Expense {
+
+	private int id;
+	private double expenseValue;
+	private String expenseCategory;
+	private LocalDate expenseDate;
+	private User user;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int userId) {
+		this.id = userId;
+	}
+	
+	public double getExpenseValue() {
+		return expenseValue;
+	}
+	public void setExpenseValue(double expenseValue) {
+		this.expenseValue = expenseValue;
+	}
+	public String getExpenseCategory() {
+		return expenseCategory;
+	}
+	public void setExpenseCategory(String expenseCategory) {
+		this.expenseCategory = expenseCategory;
+	}
+	public LocalDate getExpenseDate() {
+		return expenseDate;
+	}
+	public void setExpenseDate(LocalDate expenseDate) {
+		this.expenseDate = expenseDate;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+}

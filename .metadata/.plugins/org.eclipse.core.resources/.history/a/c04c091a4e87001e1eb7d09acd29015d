@@ -1,0 +1,19 @@
+package com.fiap.dindingo.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DbConnection {
+	
+	public Connection startConnection() {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			
+			Connection dbconnection = DriverManager.getConnection(null);
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

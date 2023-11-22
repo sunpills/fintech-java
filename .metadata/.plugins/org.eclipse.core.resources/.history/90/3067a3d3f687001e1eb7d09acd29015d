@@ -1,0 +1,5 @@
+package com.fiap.dindingo.servlets;
+
+public class UserServlet {
+
+}

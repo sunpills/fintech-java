@@ -1,0 +1,7 @@
+package com.fiap.dindingo;
+
+public class FintechApp {
+	public static void main(String[] args) {
+		
+	}
+}

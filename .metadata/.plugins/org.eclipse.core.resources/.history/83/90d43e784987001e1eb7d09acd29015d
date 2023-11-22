@@ -1,0 +1,17 @@
+package com.fiap.dindingo;
+
+import com.fiap.dindingo.dao.UserDao;
+import com.fiap.dindingo.model.User;
+
+public class FintechApp {
+	public static void main(String[] args) {
+		
+		User user = new User();
+		user.setId(1);
+		user.setFullName("Teste");
+		user.setPassword("teste123");
+		
+		UserDao uDao = new UserDao();
+		uDao.register(user);
+	}
+}

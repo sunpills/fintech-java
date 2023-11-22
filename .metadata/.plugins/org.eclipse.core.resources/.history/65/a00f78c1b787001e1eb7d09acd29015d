@@ -1,0 +1,23 @@
+package com.fiap.dindingo.dao;
+
+import java.sql.Connection;
+import com.fiap.dindingo.model.User;
+
+public class UserDao {
+	
+	private Connection conexao;
+	
+	public UserDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	public void register(User user) {
+		String sql = "INSERT INTO registrar_user (USER_ID, USER_NAME, USER_EMAIL, USER_PASSWORD)"
+				+ "VALUES (sq_registrar_user.nextval, ?, ?, ?)";
+	}
+	
+	public void delete(User user) {
+		
+	}
+	
+}

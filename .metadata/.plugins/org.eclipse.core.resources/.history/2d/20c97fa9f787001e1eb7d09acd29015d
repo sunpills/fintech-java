@@ -1,0 +1,5 @@
+package com.fiap.dindingo.service;
+
+public class UserService {
+
+}

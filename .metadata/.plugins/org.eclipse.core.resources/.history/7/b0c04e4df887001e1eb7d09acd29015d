@@ -1,0 +1,7 @@
+package com.fiap.dindingo.service;
+
+import com.fiap.dindingo.dao.UserDao;
+
+public class UserService {
+
+}

@@ -1,0 +1,42 @@
+package com.fiap.dindingo.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.Date;
+
+import com.fiap.dindingo.model.Balance;
+
+import com.fiap.dindingo.model.User;
+import com.fiap.dindingo.dao.UserDao;
+
+public class BalanceDao {
+	private Connection conexao;
+	
+	public BalanceDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	public void register(Balance balance) {
+		String sql = "INSERT INTO balance (BALANCE_ID, BALANCE_VALUE, BALANCE_CATEGORY, BALANCE_DATE)" +
+				"VALUES (?, ?, ?, ?)";
+		try {
+			
+			PreparedStatement dbPrepareTable = conexao.prepareStatement(sql);
+			
+			dbPrepareTable.setInt(1, balance.getUser().getUserId());
+			
+			dbPrepareTable.setDouble(2, balance.getBalanceValue());
+			
+			dbPrepareTable.setString(3, balance.getBalanceCategory());
+			
+			Date data = Date.valueOf(balance.getBalanceDate());
+			dbPrepareTable.setDate(4, data);
+			
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+	}
+}
