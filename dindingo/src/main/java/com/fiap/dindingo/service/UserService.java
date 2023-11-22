@@ -29,13 +29,13 @@ public class UserService {
 
 	public boolean login(String email, String password) throws SQLException {
 		instanciateNewDao();
-		
-		if(this.dao.isLogged(email, password)) {
+
+		if (this.dao.isLogged(email, password)) {
 			return true;
 		}
 		return false;
 	}
-	
+
 	private void instanciateNewDao() {
 		if (this.dao == null) {
 			this.dao = new UserDao();

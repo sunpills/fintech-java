@@ -5,44 +5,48 @@ import java.time.LocalDate;
 public class Balance {
 
 	private int id;
-	private double balanceValue;
-	private String balanceCategory;
-	private LocalDate balanceDate;
+	private double value;
+	private String category;
+	private LocalDate date;
 	private User user;
-	
+
 	public int getId() {
 		return id;
 	}
-	public void setId(int userId) {
-		this.id = userId;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	
-	public double getBalanceValue() {
-		return balanceValue;
+
+	public double getValue() {
+		return value;
 	}
-	public void setBalanceValue(double balanceValue) {
-		this.balanceValue = balanceValue;
+
+	public void setValue(double value) {
+		this.value = value;
 	}
-	
-	public String getBalanceCategory() {
-		return balanceCategory;
+
+	public String getCategory() {
+		return category;
 	}
-	public void setBalanceCategory(String balanceCategory) {
-		this.balanceCategory = balanceCategory;
+
+	public void setCategory(String category) {
+		this.category = category;
 	}
-	
-	public LocalDate getBalanceDate() {
-		return balanceDate;
+
+	public LocalDate getDate() {
+		return date;
 	}
-	public void setBalanceDate(LocalDate balanceDate) {
-		this.balanceDate = balanceDate;
+
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
+
 	public User getUser() {
 		return user;
 	}
+
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-
 }

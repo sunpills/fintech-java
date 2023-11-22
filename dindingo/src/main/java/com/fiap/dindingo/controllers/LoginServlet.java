@@ -27,13 +27,13 @@ public class LoginServlet extends HttpServlet {
 			String email = request.getParameter("email");
 			String password = request.getParameter("senha");
 			boolean isLogged = this.service.login(email, password);
-			
-			if(isLogged) {
+
+			if (isLogged) {
 				response.sendRedirect(request.getContextPath() + "/home.jsp");
 			} else {
 				response.sendRedirect(request.getContextPath() + "/error.jsp");
 			}
-			
+
 		} catch (Exception e) {
 			response.sendRedirect(request.getContextPath() + "/error.jsp");
 		}

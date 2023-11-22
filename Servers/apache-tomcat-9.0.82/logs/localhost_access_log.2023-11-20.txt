@@ -1,4 +1,0 @@
-127.0.0.1 - - [20/Nov/2023:00:04:31 -0300] "GET / HTTP/1.1" 200 11428
-0:0:0:0:0:0:0:1 - - [20/Nov/2023:00:04:34 -0300] "GET /dindingo/WEB-INF/classes/com/fiap/dindingo/dao/DbConnection.java HTTP/1.1" 404 694
-0:0:0:0:0:0:0:1 - - [20/Nov/2023:00:04:35 -0300] "GET /favicon.ico HTTP/1.1" 200 21630
-0:0:0:0:0:0:0:1 - - [20/Nov/2023:00:05:03 -0300] "GET /dindingo/WEB-INF/classes/com/fiap/dindingo/dao/DbConnection.java HTTP/1.1" 404 694

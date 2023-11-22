@@ -49,12 +49,11 @@ public class UserDao {
 					.prepareStatement("SELECT COUNT(*) FROM FINTECH_USER WHERE USER_EMAIL = ?");
 			preparedStatement.setString(1, email);
 
-			try (ResultSet resultSet = preparedStatement.executeQuery()) {
-				resultSet.next();
-				int count = resultSet.getInt(1);
+			ResultSet resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			int count = resultSet.getInt(1);
 
-				return count > 0;
-			}
+			return count > 0;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -71,13 +70,12 @@ public class UserDao {
 					.prepareStatement("SELECT COUNT(*) FROM FINTECH_USER WHERE USER_EMAIL = ? AND USER_PASSWORD = ?");
 			preparedStatement.setString(1, email);
 			preparedStatement.setString(2, password);
-			
-			try (ResultSet resultSet = preparedStatement.executeQuery()) {
-				resultSet.next();
-				int count = resultSet.getInt(1);
 
-				return count > 0;
-			}
+			ResultSet resultSet = preparedStatement.executeQuery();
+			resultSet.next();
+			int count = resultSet.getInt(1);
+
+			return count > 0;
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -86,7 +84,7 @@ public class UserDao {
 			this.conexao.close();
 		}
 	}
-	
+
 	private void checkConnection() throws SQLException {
 		if (this.conexao.isClosed()) {
 			this.conexao = DbConnection.startConnection();
