@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.fiap.dindingo.service.BalanceService;
 
@@ -28,7 +29,10 @@ public class BalanceServlet extends HttpServlet {
 		String date = request.getParameter("expense_date");
 
 		try {
-			service.register(value, category, date);
+			HttpSession session=request.getSession();
+			int userId= (Integer) session.getAttribute("userId");
+			
+			service.register(value, category, date, userId);
 			response.sendRedirect(request.getContextPath() + "/home.jsp");
 		} catch (SQLException e) {
 			response.sendRedirect(request.getContextPath() + "/error.jsp");

@@ -6,7 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
+import com.fiap.dindingo.model.User;
 import com.fiap.dindingo.service.UserService;
 
 public class LoginServlet extends HttpServlet {
@@ -26,9 +28,13 @@ public class LoginServlet extends HttpServlet {
 		try {
 			String email = request.getParameter("email");
 			String password = request.getParameter("senha");
-			boolean isLogged = this.service.login(email, password);
+			User user = this.service.login(email, password);
 
-			if (isLogged) {
+			if (user!=null) {
+				HttpSession session=request.getSession();
+				session.setAttribute("userId", user.getId());
+				session.setAttribute("userName", user.getFullName());
+				
 				response.sendRedirect(request.getContextPath() + "/home.jsp");
 			} else {
 				response.sendRedirect(request.getContextPath() + "/error.jsp");

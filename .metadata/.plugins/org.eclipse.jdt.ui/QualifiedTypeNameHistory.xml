@@ -13,4 +13,6 @@
     <fullyQualifiedTypeName name="com.fiap.dindingo.service.UserService"/>
     <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
     <fullyQualifiedTypeName name="br.com.fiap.dindingo.utils.DinDingoParser"/>
+    <fullyQualifiedTypeName name="com.fiap.dindingo.service.BalanceService"/>
+    <fullyQualifiedTypeName name="com.fiap.dindingo.dao.BalanceDao"/>
 </qualifiedTypeNameHistroy>

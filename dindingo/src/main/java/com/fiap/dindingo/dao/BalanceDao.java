@@ -1,11 +1,15 @@
 package com.fiap.dindingo.dao;
 
+import java.util.*;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 import com.fiap.dindingo.model.Balance;
+import com.fiap.dindingo.model.User;
+import java.sql.*;
 
 public class BalanceDao {
 	private Connection conexao;
@@ -39,6 +43,42 @@ public class BalanceDao {
 		} finally {
 			this.conexao.close();
 		}
+	}
+	
+	public List<Balance> getBalances(User user) throws SQLException{
+		List<Balance> balances = new ArrayList<Balance>();
+		
+		String sql = "SELECT BALANCE_VALUE, BALANCE_CATEGORY, BALANCE_DATE FROM  balance WHERE USER_ID = ?)";
+		
+		try {
+			checkConnection();
+			PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+			preparedStatement.setInt(1, user.getId());
+			
+			ResultSet rs = preparedStatement.executeQuery(sql);
+
+	        Statement stmts = (Statement) this.conexao.createStatement();
+
+	        if (rs.next()) {
+	            ResultSet data = stmts.executeQuery(sql);
+
+	            while (data.next()) {
+	            	Balance balance = new Balance();
+	            	balance.setValue(data.getDouble("BALANCE_VALUE"));
+	            	balance.setCategory(data.getString("BALANCE_CATEGORY"));
+	            	balance.setDate(null);//data.getDate("BALANCE_DATE")
+	            	balance.setUser(user);
+	            	balances.add(balance);
+	            }	          
+	        }
+	        
+		} catch (SQLException e) {
+			System.out.println("deu erro");
+			e.printStackTrace();
+		} finally {
+			this.conexao.close();
+		}
+		return balances;
 	}
 
 	private void checkConnection() throws SQLException {

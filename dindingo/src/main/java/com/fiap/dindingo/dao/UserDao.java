@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.fiap.dindingo.model.Balance;
 import com.fiap.dindingo.model.User;
 
 public class UserDao {
@@ -63,19 +64,21 @@ public class UserDao {
 		}
 	}
 
-	public boolean isLogged(String email, String password) throws SQLException {
+	public User getUser(String email, String password) throws SQLException {
 		try {
 			checkConnection();
 			PreparedStatement preparedStatement = this.conexao
-					.prepareStatement("SELECT COUNT(*) FROM FINTECH_USER WHERE USER_EMAIL = ? AND USER_PASSWORD = ?");
+					.prepareStatement("SELECT ID, USER_NAME FROM FINTECH_USER WHERE USER_EMAIL = ? AND USER_PASSWORD = ?");
 			preparedStatement.setString(1, email);
 			preparedStatement.setString(2, password);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			int count = resultSet.getInt(1);
-
-			return count > 0;
+			User user = new User();
+			user.setId(resultSet.getInt("ID"));
+			user.setFullName(resultSet.getString("USER_NAME"));
+			
+			return user;
 
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -1,7 +1,3 @@
-INDEX VERSION 1.134
-C:\Users\emily\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4270147453.index
-\dindingo
-C:\Users\emily\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\797267026.index
-\trocas-fiap\src\main\java
-C:\Users\emily\eclipse-workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3590466522.index
-\fintech\src\main\java
+INDEX VERSION 1.132
+C:\Users\douglas.m.takara\workspace\fintech-java\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4270147453.index
+\dindingo\src\main\java

@@ -27,13 +27,14 @@ public class UserService {
 		}
 	}
 
-	public boolean login(String email, String password) throws SQLException {
+	public User login(String email, String password) throws SQLException {
 		instanciateNewDao();
 
-		if (this.dao.isLogged(email, password)) {
-			return true;
+		User user = this.dao.getUser(email, password);
+		if (user!= null) {
+			return user;
 		}
-		return false;
+		return null;
 	}
 
 	private void instanciateNewDao() {

@@ -3,9 +3,15 @@ package com.fiap.dindingo.dao;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.fiap.dindingo.model.Balance;
 import com.fiap.dindingo.model.Expense;
+import com.fiap.dindingo.model.User;
 
 public class ExpenseDao {
 
@@ -34,13 +40,48 @@ public class ExpenseDao {
 			System.out.println("deu certo");
 
 		} catch (SQLException e) {
-			System.out.println("deu erro");
 			e.printStackTrace();
 		} finally {
 			this.conexao.close();
 		}
 	}
 
+
+	public List<Expense> getExpenses(User user) throws SQLException{
+		List<Expense> expenses = new ArrayList<Expense>();
+		
+		String sql = "SELECT EXPENSE_VALUE, EXPENSE_CATEGORY, EXPENSE_DATE FROM EXPENSE WHERE USER_ID = ?)";
+		
+		try {
+			checkConnection();
+			PreparedStatement preparedStatement = conexao.prepareStatement(sql);
+			preparedStatement.setInt(1, user.getId());
+			
+			ResultSet rs = preparedStatement.executeQuery(sql);
+
+	        Statement stmts = (Statement) this.conexao.createStatement();
+
+	        if (rs.next()) {
+	            ResultSet data = stmts.executeQuery(sql);
+
+	            while (data.next()) {
+	            	Expense expense = new Expense();
+	            	expense.setValue(data.getDouble("EXPENSE_VALUE"));
+	            	expense.setCategory(data.getString("EXPENSE_CATEGORY"));
+	            	expense.setDate(null);//data.getDate("EXPENSE_DATE")
+	            	expense.setUser(user);
+	            	expenses.add(expense);
+	            }	          
+	        }
+	        
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			this.conexao.close();
+		}
+		return expenses;
+	}
+	
 	private void checkConnection() throws SQLException {
 		if (this.conexao.isClosed()) {
 			this.conexao = DbConnection.startConnection();
