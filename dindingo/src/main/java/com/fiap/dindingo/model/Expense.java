@@ -5,34 +5,33 @@ import java.time.LocalDate;
 public class Expense {
 
 	private int id;
-	private double expenseValue;
-	private String expenseCategory;
-	private LocalDate expenseDate;
+	private double value;
+	private String category;
+	private LocalDate date;
 	private User user;
-	
 	public int getId() {
 		return id;
 	}
-	public void setId(int userId) {
-		this.id = userId;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public double getExpenseValue() {
-		return expenseValue;
+	public double getValue() {
+		return value;
 	}
-	public void setExpenseValue(double expenseValue) {
-		this.expenseValue = expenseValue;
+	public void setValue(double value) {
+		this.value = value;
 	}
-	public String getExpenseCategory() {
-		return expenseCategory;
+	public String getCategory() {
+		return category;
 	}
-	public void setExpenseCategory(String expenseCategory) {
-		this.expenseCategory = expenseCategory;
+	public void setCategory(String category) {
+		this.category = category;
 	}
-	public LocalDate getExpenseDate() {
-		return expenseDate;
+	public LocalDate getDate() {
+		return date;
 	}
-	public void setExpenseDate(LocalDate expenseDate) {
-		this.expenseDate = expenseDate;
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 	public User getUser() {
 		return user;
@@ -40,5 +39,4 @@ public class Expense {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 }
