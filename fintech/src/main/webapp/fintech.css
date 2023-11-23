@@ -1,0 +1,128 @@
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap');
+
+:root {
+  --primary-color: ;
+  --primary-color-darker: ;
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', cursive;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: rgb(206, 206, 206);
+  background: url("https://i.ibb.co/pjFcB9B/background-shapes.png");
+  background-size: cover;
+}
+
+nav {
+	display: flex;
+	height: 60px;
+	width: 100%;
+	font-size: 0.75rem;
+	background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+ul {
+	display: inline-flex;
+	gap: 20px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+    color: rgb(0, 157, 122);
+}
+
+a:hover {
+	color: rgb(206, 206, 206);
+}
+
+h1 {
+	font-size: 2.5rem;
+    color: rgb(0, 157, 122);
+    text-align: center;
+}
+
+h2 {
+	color: rgb(206, 206, 206);
+	font-size: 1.0rem;
+	text-align: center;
+}
+
+h3 {
+	color: rgb(206, 206, 206);
+	font-size: 0.75rem;
+	font-weight: lighter;
+	text-align: center;
+}
+
+.container-login {
+  position: relative;
+  max-width: 400px;
+  margin: 55px auto;
+  padding: 25px;
+  background: black;
+  box-sizing: border-box;
+  box-shadow:0 0px 10px rgba(0,0,0,.6);
+  border-radius: 10px;
+  --borderWidth: 3px;
+  border-radius: var(--borderWidth);
+  border-radius: 10px;
+  color: rgb(206, 206, 206);
+  text-align: left;
+}
+
+form input, form label, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+}
+
+form input {
+  font-size: 0.75rem;
+  font-weight: lighter;
+  height: 40px;
+  padding: 0 20px;
+}
+
+form button {
+  border: none;
+  background: rgb(0, 157, 122);
+  font-size: 14px;
+  font-weight: 700;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 30px;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+form button:hover {
+  background: rgb(0, 157, 122);
+}
+
+.container-blocks {
+  display: flex;
+}

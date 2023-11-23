@@ -1,0 +1,11 @@
+package com.fiap.dindingo.model;
+
+import java.time.LocalDate;
+
+public class RegisterMoney {
+
+	public double moneyValue;
+	public String moneyCategory;
+	public LocalDate moneyDate;
+
+}

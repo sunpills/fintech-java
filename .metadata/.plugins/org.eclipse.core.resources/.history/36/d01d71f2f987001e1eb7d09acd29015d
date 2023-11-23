@@ -1,0 +1,14 @@
+package com.fiap.dindingo.service;
+
+import com.fiap.dindingo.dao.UserDao;
+
+public class UserService {
+	 private UserDao userDao;
+
+	    public UsuarioService() {
+	        this.registerDAO = new RegisterDAO();
+	    }
+
+	    public boolean cadastrarUsuario(String nome, String email, String senha) {
+	        return registerDAO.cadastrarUsuario(nome, email, senha);
+}

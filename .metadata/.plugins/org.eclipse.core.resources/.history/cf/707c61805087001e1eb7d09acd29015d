@@ -1,0 +1,23 @@
+package com.fiap.dindingo.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DbConnection {
+	
+	private final String URL = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl";
+	private final String USUARIO = "rm99681";
+	private final String SENHA = "220796";
+	
+	public Connection startConnection() {
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			Connection dbconnection = DriverManager.getConnection(URL, USUARIO, SENHA);
+		} catch (ClassNotFoundException e) {
+			System.out.println("Class not found");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

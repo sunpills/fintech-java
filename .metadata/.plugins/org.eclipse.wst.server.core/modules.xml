@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<modules>
+  <module moduleId="org.eclipse.jst.jee.server:fintech" serverId="Tomcat v9.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.j2ee.server:dindingo" serverId="apache-tomcat-9.0.71 at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:dindingo" serverId="Tomcat v9.0 Server at localhost"/>
+</modules>

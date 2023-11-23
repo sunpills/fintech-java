@@ -1,0 +1,28 @@
+package com.fiap.dindingo;
+
+import com.fiap.dindingo.dao.DbConnection;
+
+import com.fiap.dindingo.dao.UserDao;
+import com.fiap.dindingo.model.User;
+
+import com.fiap.dindingo.dao.ExpenseDao;
+import com.fiap.dindingo.model.Expense;
+
+public class FintechApp {
+	public static void main(String[] args) {
+		
+		User user = new User();
+		user.setId(4);
+		user.setFullName("Teste");
+		user.setPassword("teste123");
+		
+		UserDao uDao = new UserDao(DbConnection.startConnection());
+		uDao.register(user);
+		
+		Expense expense = new Expense();
+		expense.setUserId(4);
+		expense.setExpenseValue(0);
+		expense.setExpenseCategory("Alimentacao");
+		
+	}
+}

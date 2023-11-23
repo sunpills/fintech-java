@@ -1,0 +1,29 @@
+package com.fiap.dindingo.service;
+
+import com.fiap.dindingo.dao.UserDao;
+import com.fiap.dindingo.model.User;
+
+public class UserService {
+	private UserDao userDao;
+
+	public UserService() {
+	        this.userDao = new UserDao();
+	    }
+
+	    public void registerUser(String fullName, String email, String password) {
+	    	User user = new User();
+	    	user.setFullName(fullName);
+	    	user.setEmail(email);
+	    	user.setPassword(password);
+	    	
+	        userDao.register(user);
+	        
+	        userDao.isEmailDuplicated(email);
+	        
+	        if (userDao.isEmailDuplicated(email)) {
+	            System.out.println("E-mail já existe");
+	        } else {
+	        	userDao.register(user);
+	        }
+	    }
+}

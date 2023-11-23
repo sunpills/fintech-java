@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\douglas.m.takara\workspace\fintech-java\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2664209799.index
+4270147453.index
+2507825430.index
+3463099996.index
+1092995864.index
+1455217362.index
+9977751.index

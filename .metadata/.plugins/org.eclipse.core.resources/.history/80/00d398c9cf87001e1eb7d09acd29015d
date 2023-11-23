@@ -1,0 +1,36 @@
+package com.fiap.dindingo.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
+import com.fiap.dindingo.model.User;
+
+public class UserDao {
+	
+	private Connection conexao;
+	
+	public UserDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	public void register(User user) {
+		String sql = "INSERT INTO user_login (USER_ID, USER_NAME, USER_EMAIL, USER_PASSWORD)"
+				+ "VALUES (sq_user_login.nextval, ?, ?, ?)";
+		
+		try {
+			PreparedStatement dbPrepareTable = conexao.prepareStatement(sql);
+			
+			dbPrepareTable.setString(1, user.getFullName());
+			dbPrepareTable.setEmail(1, user.getEmail());
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	
+	public void delete(User user) {
+		
+	}
+	
+}

@@ -1,0 +1,9 @@
+package com.fiap.dindingo.model;
+
+public class RegisterUser {
+
+	fullName
+	Email
+	Password
+
+}

@@ -1,0 +1,37 @@
+package com.fiap.dindingo.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.Date;
+
+import com.fiap.dindingo.model.Expense;
+
+public class ExpenseDao {
+
+	private Connection conexao;
+	
+	public ExpenseDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+	
+	public void register(Expense expense) {
+		String sql = "INSERT INTO registrar_gasto (USER_ID, VALOR_GASTO, CATEGORIA, DATA_GASTO)" +
+				"VALUES (?, ?, ?, ?)";
+		try {
+			
+			PreparedStatement dbPrepareTable = conexao.prepareStatement(sql);
+			
+			dbPrepareTable.setInt(1, expense.getUserId());
+			dbPrepareTable.setDouble(2, expense.getExpenseValue());
+			dbPrepareTable.setString(3, expense.getExpenseCategory());
+			Date data = Date.valueOf(expense.getExpenseDate());
+			dbPrepareTable.setDate(4, data);
+			
+			
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+}
+}

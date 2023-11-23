@@ -1,0 +1,12 @@
+package com.fiap.dindingo.dao;
+
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Connection;
+import java.sql.Date;
+
+import com.fiap.dindingo.model.Balance;
+
+public class BalanceDao {
+
+}
